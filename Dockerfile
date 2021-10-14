@@ -6,7 +6,9 @@ RUN apt-get -y install unzip qgis
 RUN apt-get -y install python3-pip
 RUN useradd admin -m
 RUN echo 'admin ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-
+COPY requirements.txt /home/admin/requirements.txt
+RUN pip install -r /home/admin/requirements.txt
+RUN apt-get -y install crudini
 USER admin
 COPY firefox.desktop /home/admin/Desktop/
 COPY org.qgis.qgis.desktop /home/admin/Desktop/
