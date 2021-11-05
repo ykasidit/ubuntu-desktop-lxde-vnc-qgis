@@ -3,3 +3,4 @@ Type=Link
 Name=Firefox Web Browser
 Icon=firefox
 URL=/usr/share/applications/firefox.desktop
+Exec=firefox https://nginx:8443

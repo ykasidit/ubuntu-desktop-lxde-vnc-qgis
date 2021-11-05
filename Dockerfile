@@ -2,6 +2,9 @@ FROM dorowu/ubuntu-desktop-lxde-vnc:focal
 
 RUN add-apt-repository ppa:ubuntugis
 RUN apt-get update
+RUN dpkg --add-architecture i386
+RUN apt-get update
+RUN apt-get -y install libc6:i386 libncurses5:i386 libstdc++6:i386
 RUN apt-get -y install unzip qgis
 RUN apt-get -y install python3-pip
 RUN useradd admin -m
