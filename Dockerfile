@@ -12,6 +12,13 @@ RUN echo 'admin ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 COPY requirements.txt /home/admin/requirements.txt
 RUN pip install -r /home/admin/requirements.txt
 RUN apt-get -y install crudini
+RUN apt-get -y install language-pack-th language-pack-gnome-th language-pack-th-base language-pack-gnome-th-base
+RUN locale-gen
+RUN apt-get -y install msttcorefonts
+RUN apt-get -y install --reinstall ttf-ubuntu-font-family
+RUN apt -y install xfonts-thai
+RUN wget ftp://ftp.psu.ac.th/pub/thaifonts/sipa-fonts/*ttf -P /usr/share/fonts/truetype/thai
+RUN fc-cache -fv
 USER admin
 COPY firefox.desktop /home/admin/Desktop/
 COPY org.qgis.qgis.desktop /home/admin/Desktop/
