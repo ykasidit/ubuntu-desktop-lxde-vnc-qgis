@@ -6,7 +6,7 @@ RUN pip install -r /requirements.txt
 RUN pip install Pillow==9.0.1
 RUN apt -y install openssh-server
 
-USER admin
 RUN mkdir /home/admin/.ssh
-
-USER ROOT
+RUN chown admin /home/admin/.ssh
+RUN service ssh start
+EXPOSE 22
