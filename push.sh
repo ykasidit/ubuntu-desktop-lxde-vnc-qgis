@@ -1,1 +1,1 @@
-docker push ykasidit/ubuntu-desktop-lxde-vnc-qgis:latest
+docker push ykasidit/ubuntu-desktop-lxde-vnc-qgis-xvfb:latest
