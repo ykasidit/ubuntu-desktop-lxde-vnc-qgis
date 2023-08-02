@@ -8,5 +8,5 @@ RUN apt -y install openssh-server
 
 RUN mkdir /home/admin/.ssh
 RUN chown admin /home/admin/.ssh
-RUN service ssh start
 EXPOSE 22
+ENTRYPOINT ["bash", "-c","service ssh start && /startup.sh"]
