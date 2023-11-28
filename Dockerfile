@@ -19,6 +19,11 @@ RUN apt-get -y install --reinstall ttf-ubuntu-font-family
 RUN apt -y install xfonts-thai
 RUN wget ftp://ftp.psu.ac.th/pub/thaifonts/sipa-fonts/*ttf -P /usr/share/fonts/truetype/thai
 RUN fc-cache -fv
+RUN apt-get update
+RUN apt-get -y install filezilla libreoffice
+RUN apt -y install libsqlite3-mod-spatialite 
+RUN apt-get -y install libproj15
+
 USER admin
 COPY firefox.desktop /home/admin/Desktop/
 COPY org.qgis.qgis.desktop /home/admin/Desktop/
